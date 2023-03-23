@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Close me if you can Online Game</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .div1{
+            height: 100px;
+            width: 200px;
+            background-color: aqua;
+            border-radius: 10px;
+            align-content: center;
+            position: absolute;
+        }
+        .main{
+            height: 100vh;
+            width: 100vw;
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+
+        <!--Game Box-->
+        <div class="div1" id="d1" style="display: none;">
+            <p align="center">
+                <b>Close Me If You Can</b>
+            </p><br>
+            <button id="btnClose" class="ml-4">close</button>
+        </div>
+        <!--Game Description-->
+        <div id="dis" class="container" style="display: block; background-color: aqua; position: absolute ;">
+            <h1 id="head" style="display: none; color: rgb(0, 75, 19);">You won<br>Try Again</h1>
+            <h1>Game Description---</h1>
+            <p>you have to catch the box and close it before it moves </p><br><br><br>
+            <button id="btnStart">Click Here To Start</button>
+            <br><br>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $("#d1").mouseenter(function(){
+            var a=Math.floor(Math.random()*500);
+            var b=Math.floor(Math.random()*1300);
+          $("#d1").css({'marginTop':a+'px','marginLeft':b+'px'},1000);
+        });
+        $("#btnClose").click(function(){
+            $("#d1").css({'display':'none'},1000);
+            $("#head").css({'display':'block'},1000);
+            $("#dis").css({'display':'block'},1000);
+
+        });
+        $("#btnStart").click(function(){
+            $("#dis").css({'display':'none'},1000);
+            $("#d1").css({'display':'block'},1000);
+         
+        });
+        
+    });
+</script>
